@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Swell/Swell.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:CocoaHTTPServer/CocoaHTTPServer.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Samples">
+      <FileRef
+         location = "group:Samples/SwellTodo/SwellTodo.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

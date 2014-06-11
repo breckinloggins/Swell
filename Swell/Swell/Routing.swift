@@ -1,17 +1,14 @@
 //
-//  Swell.swift
+//  Routing.swift
 //  Swell
 //
-//  Created by Breckin Loggins on 6/6/14.
+//  Created by Breckin Loggins on 6/10/14.
 //  Copyright (c) 2014 Breckin Loggins. All rights reserved.
 //
 
 import Foundation
-import CocoaHTTPServer
 
-var routes : NSURL[] = []
-
-func matchSpecForRoute(route: NSURL) -> NSURL
+func _matchSpecForRoute(route: NSURL) -> NSURL
 {
     var specURL = NSURL.URLWithString("/")
     for component : AnyObject in route.pathComponents {
@@ -27,14 +24,14 @@ func matchSpecForRoute(route: NSURL) -> NSURL
     return specURL
 }
 
-func routeForURI(URI: String) -> NSURL? {
+func _routeForURI(URI: String) -> NSURL? {
     let url = NSURL.URLWithString(URI)
     let urlComponents = url.pathComponents
-    for route in routes {
+    for route in RouteMap.sharedRouteMap.routes {
         if route.pathComponents.count != urlComponents.count {
             continue
         }
-        let spec = matchSpecForRoute(route)
+        let spec = _matchSpecForRoute(route)
         let specComponents = spec.pathComponents
         var i = 0
         for i = 0; i < specComponents.count; i++ {
@@ -60,7 +57,7 @@ func routeForURI(URI: String) -> NSURL? {
 }
 
 func matchForURI(URI : String) -> (NSURL, Dictionary<String, String>)? {
-    if let route = routeForURI(URI) {
+    if let route = _routeForURI(URI) {
         var params : Dictionary<String, String> = [:]
         let url = NSURL.URLWithString(URI)
         let urlComponents = url.pathComponents
@@ -78,53 +75,22 @@ func matchForURI(URI : String) -> (NSURL, Dictionary<String, String>)? {
     return nil
 }
 
-class SwellHTTPConnection : HTTPConnection {
-    override func httpResponseForMethod(method: String!, URI path: String!) -> NSObject! {
-        println("Will return response for \(method) -> \(path)")
-        if let (route, params) = matchForURI(path) {
-            let handler = routeMap[route]!
-            NSThread.currentThread().threadDictionary["params"] = params
-            let response = HTTPDataResponse(data:handler().dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-            NSThread.currentThread().threadDictionary.removeObjectForKey("params")
-            return response
-        }
-        
-        return nil // TODO: 404
-    }
+//
+// Public DSL
+//
+
+func get(route: String, handler: () -> AnyObject?) {
+    RouteMap.sharedRouteMap.registerRoute(route, forMethod: .GET, withHandler: handler)
 }
 
-class Params {
-    subscript(key : String) -> String? {
-        if let params = NSThread.currentThread().threadDictionary["params"] as? Dictionary<String, String> {
-            return params[key]
-        }
-            
-        return nil
-    }
+func post(route: String, handler: () -> AnyObject?) {
+    RouteMap.sharedRouteMap.registerRoute(route, forMethod: .POST, withHandler: handler)
 }
 
-var routeMap : Dictionary<NSURL, () -> String> = [:]
-var params = Params()
-
-func get(route : String, handler : () -> String) {
-    let routeURL = NSURL.URLWithString(route)
-    routeMap[routeURL] = handler
-    routes.append(routeURL)
+func put(route: String, handler: () -> AnyObject?) {
+    RouteMap.sharedRouteMap.registerRoute(route, forMethod: .PUT, withHandler: handler)
 }
 
-func listen(port : Int) {
-    let server = HTTPServer()
-    server.setConnectionClass(SwellHTTPConnection)
-    
-    println("Server starting on port \(port)")
-    server.setPort(UInt16(port))
-    
-    let error : NSErrorPointer = nil
-    server.start(error)
-    
-    if error {
-        println("Error starting server: \(error)")
-    }
-    
-    NSRunLoop.currentRunLoop().run()
+func delete(route: String, handler: () -> AnyObject?) {
+    RouteMap.sharedRouteMap.registerRoute(route, forMethod: .DELETE, withHandler: handler)
 }
