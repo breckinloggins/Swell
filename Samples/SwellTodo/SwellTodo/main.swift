@@ -15,16 +15,63 @@ class Todo {
 }
 
 var todos : Todo[] = []
+var t = Todo()
+t.title = "Get milk"
+todos.append(t)
+
+t = Todo()
+t.title = "Walk dog"
+todos.append(t)
 
 get("/todos") {
-    return "<ul><li>Coffee</li><li>Milk</li></ul>"
+    return render {
+        html {
+            body {
+                p("Your TODO List")
+                ul {
+                    for (index, todo) in enumerate(todos.filter({!$0.done})) {
+                        if (todo.done) {
+                            continue
+                        }
+                        
+                        li { a(href:"/todos/\(index)") { text(todo.title) } }
+                    }
+                }
+                
+                br()
+                
+                p("New TODO")
+                form(method: "POST", action: "/todos") {
+                    fieldset {
+                        label(`for`:"title") { text("Title") }
+                        input(type:"text", name:"title")
+                        
+                        input(type:"submit", name:"submit", value:"Create TODO")
+                    }
+                }
+            }
+        }
+    }
 }
 
 get("/todos/:id") {
-    if let id = params["id"] {
-        return "TODO \(id)"
+    if let id = params["id"]?.toInt() {
+        return render {
+            html {
+                body {
+                    if id < todos.count {
+                        p("Todo \(id)")
+                        p(todos[id].title)
+                    } else {
+                        p("Todo \(id) not found")
+                    }
+                    br()
+                    a(href:"/todos", { text("All todos") })
+                }
+            }
+        }
     } else {
-        return "Nope"
+        return "Improper TODO URL"
     }
 }
 

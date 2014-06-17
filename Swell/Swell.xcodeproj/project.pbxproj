@@ -10,6 +10,7 @@
 		F809C89C19482D99007FF11F /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C89B19482D99007FF11F /* Routing.swift */; };
 		F809C89F19482E80007FF11F /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C89E19482E80007FF11F /* Params.swift */; };
 		F809C8A119483767007FF11F /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C8A019483767007FF11F /* Server.swift */; };
+		F8439350194FF1B3003CD6A9 /* HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843934F194FF1B3003CD6A9 /* HTML.swift */; };
 		F8B145E819455B6C00A71DFF /* HandlerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145E719455B6C00A71DFF /* HandlerContext.swift */; };
 		F8B145EB19455C8500A71DFF /* SwellHTTPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145EA19455C8500A71DFF /* SwellHTTPConnection.swift */; };
 		F8B145ED19455D5500A71DFF /* RouteMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145EC19455D5500A71DFF /* RouteMap.swift */; };
@@ -55,6 +56,7 @@
 		F809C89B19482D99007FF11F /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 		F809C89E19482E80007FF11F /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		F809C8A019483767007FF11F /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		F843934F194FF1B3003CD6A9 /* HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTML.swift; sourceTree = "<group>"; };
 		F8B145E719455B6C00A71DFF /* HandlerContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandlerContext.swift; sourceTree = "<group>"; };
 		F8B145EA19455C8500A71DFF /* SwellHTTPConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwellHTTPConnection.swift; sourceTree = "<group>"; };
 		F8B145EC19455D5500A71DFF /* RouteMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteMap.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				F809C89B19482D99007FF11F /* Routing.swift */,
 				F809C89E19482E80007FF11F /* Params.swift */,
 				F809C8A019483767007FF11F /* Server.swift */,
+				F843934F194FF1B3003CD6A9 /* HTML.swift */,
 			);
 			path = Swell;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				F809C8A119483767007FF11F /* Server.swift in Sources */,
 				F809C89C19482D99007FF11F /* Routing.swift in Sources */,
+				F8439350194FF1B3003CD6A9 /* HTML.swift in Sources */,
 				F8B145EF19455DF000A71DFF /* HTTPMethod.swift in Sources */,
 				F8B145E819455B6C00A71DFF /* HandlerContext.swift in Sources */,
 				F809C89F19482E80007FF11F /* Params.swift in Sources */,
