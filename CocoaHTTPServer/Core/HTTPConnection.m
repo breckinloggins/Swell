@@ -885,6 +885,16 @@ static NSMutableArray *recentNonces;
 	return [[request url] relativeString];
 }
 
+- (NSData *)requestBody
+{
+    return [request body];
+}
+
+- (BOOL)appendRequestData:(NSData *)data
+{
+    return [request appendData:data];
+}
+
 /**
  * This method is called after a full HTTP request has been received.
  * The current request is in the HTTPMessage request variable.

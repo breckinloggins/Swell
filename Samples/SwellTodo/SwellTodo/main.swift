@@ -75,4 +75,14 @@ get("/todos/:id") {
     }
 }
 
+post("/todos") {
+    if let title = params["title"] {
+        t = Todo()
+        t.title = title
+        todos.append(t)
+    }
+    
+    return ""
+}
+
 listen(12346)

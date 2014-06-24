@@ -86,6 +86,8 @@
 - (NSDictionary *)parseGetParams;
 
 - (NSString *)requestURI;
+- (NSData *)requestBody;
+- (BOOL)appendRequestData:(NSData *)data;
 
 - (NSArray *)directoryIndexFileNames;
 - (NSString *)filePathForURI:(NSString *)path;

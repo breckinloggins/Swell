@@ -20,7 +20,7 @@
 		F8DDE69F1942C66900552413 /* HTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6621942C66900552413 /* HTTPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DDE6A01942C66900552413 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DDE6631942C66900552413 /* HTTPConnection.m */; };
 		F8DDE6A11942C66900552413 /* HTTPLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6641942C66900552413 /* HTTPLogging.h */; };
-		F8DDE6A21942C66900552413 /* HTTPMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6651942C66900552413 /* HTTPMessage.h */; };
+		F8DDE6A21942C66900552413 /* HTTPMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6651942C66900552413 /* HTTPMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DDE6A31942C66900552413 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DDE6661942C66900552413 /* HTTPMessage.m */; };
 		F8DDE6A41942C66900552413 /* HTTPResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6671942C66900552413 /* HTTPResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DDE6A51942C66900552413 /* HTTPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DDE6681942C66900552413 /* HTTPServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -317,10 +317,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DDE6A21942C66900552413 /* HTTPMessage.h in Headers */,
 				F8DDE6A41942C66900552413 /* HTTPResponse.h in Headers */,
 				F8DDE69F1942C66900552413 /* HTTPConnection.h in Headers */,
 				F8DDE6AF1942C66900552413 /* HTTPDataResponse.h in Headers */,
+				F8DDE6A21942C66900552413 /* HTTPMessage.h in Headers */,
 				F8DDE6A51942C66900552413 /* HTTPServer.h in Headers */,
 				F8DDE6A91942C66900552413 /* MultipartMessageHeader.h in Headers */,
 				F8DDE6B51942C66900552413 /* HTTPFileResponse.h in Headers */,
@@ -661,6 +661,7 @@
 				F8DDE64B1942C62B00552413 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8DDE64C1942C62B00552413 /* Build configuration list for PBXNativeTarget "CocoaHTTPServerTests" */ = {
 			isa = XCConfigurationList;
@@ -669,6 +670,7 @@
 				F8DDE64E1942C62B00552413 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

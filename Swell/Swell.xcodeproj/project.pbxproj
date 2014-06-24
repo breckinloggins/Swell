@@ -11,6 +11,7 @@
 		F809C89F19482E80007FF11F /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C89E19482E80007FF11F /* Params.swift */; };
 		F809C8A119483767007FF11F /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F809C8A019483767007FF11F /* Server.swift */; };
 		F8439350194FF1B3003CD6A9 /* HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843934F194FF1B3003CD6A9 /* HTML.swift */; };
+		F86B2918195924E400D6C8F5 /* CocoaHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FC4D67194559C000646807 /* CocoaHTTPServer.framework */; };
 		F8B145E819455B6C00A71DFF /* HandlerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145E719455B6C00A71DFF /* HandlerContext.swift */; };
 		F8B145EB19455C8500A71DFF /* SwellHTTPConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145EA19455C8500A71DFF /* SwellHTTPConnection.swift */; };
 		F8B145ED19455D5500A71DFF /* RouteMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B145EC19455D5500A71DFF /* RouteMap.swift */; };
@@ -18,7 +19,6 @@
 		F8FC4D4A1945594600646807 /* Swell.h in Headers */ = {isa = PBXBuildFile; fileRef = F8FC4D491945594600646807 /* Swell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8FC4D501945594600646807 /* Swell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FC4D441945594600646807 /* Swell.framework */; };
 		F8FC4D571945594600646807 /* SwellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FC4D561945594600646807 /* SwellTests.swift */; };
-		F8FC4D6C19455A3200646807 /* CocoaHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FC4D67194559C000646807 /* CocoaHTTPServer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8FC4D6C19455A3200646807 /* CocoaHTTPServer.framework in Frameworks */,
+				F86B2918195924E400D6C8F5 /* CocoaHTTPServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

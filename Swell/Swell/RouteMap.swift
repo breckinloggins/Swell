@@ -23,8 +23,9 @@ class RouteMap {
     
     func registerRoute(route: String, forMethod method: HTTPMethod, withHandler handler: () -> AnyObject?) {
         let routeURL = NSURL.URLWithString(route)
-        if var handlerMap : Dictionary<HTTPMethod, () -> AnyObject?> = _map[routeURL] {
+        if var handlerMap = _map[routeURL] {
             handlerMap[method] = handler
+            _map[routeURL] = handlerMap
         } else {
             _map[routeURL] = [method: handler]
         }
